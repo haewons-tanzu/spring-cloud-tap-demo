@@ -1,0 +1,65 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: fashion-bestseller
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: fashion-bestseller
+    apps.tanzu.vmware.com/has-tests: "true"
+    tanzu.app.live.view: "true"
+    tanzu.app.live.view.application.name: fashion-bestseller
+    #networking.knative.dev/visibility: cluster-local
+    #apis.apps.tanzu.vmware.com/register-api: "true"
+spec:
+  params:
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/language: java
+  build:
+    # env:
+    # - name: BP_JVM_VERSION
+    #   value: "17"
+  # - name: api_descriptor
+  #   value:
+  #     type: openapi
+  #     location:
+  #       path: "/v3/api-docs"
+  #     system: dev
+  #     owner: team-a
+  #     description: "A set of API endpoints."
+  source:
+    git:
+      url: https://github.com/haewons-tanzu/spring-cloud-tap-demo
+      ref:
+        branch: master
+    subPath: fashion-bestseller
+  
+  # serviceClaims:
+  # - name: rmq
+  #   ref:
+  #     apiVersion: rabbitmq.com/v1beta1
+  #     kind: RabbitmqCluster
+  #     name: rmq-1
+  # - name: db
+  #  ref:
+      #apiVersion: sql.tanzu.vmware.com/v1
+      #kind: Postgres
+  #    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+  #    kind: ClassClaim
+  #    name: postgres-1
+  # - name: cache
+  #   ref:
+  #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+  #     kind: ResourceClaim
+  #     name: gemfire-binding-compatible
+  # - name: config-server
+  #   ref:
+  #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+  #     kind: ResourceClaim
+  #     name: configserver-binding-compatible
+  # - name: auth-client
+  #   ref:
+  #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+  #     kind: ResourceClaim
+  #     name: auth-client

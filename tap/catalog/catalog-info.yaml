@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: spring-cloud-tap
+  description: Spring Cloud Architecture on TAP
+  annotations:
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  targets:
+    - ./service/fashion-bestseller.yaml
+    - ./service/toys-bestseller.yaml
+    - ./service/hot-deals.yaml

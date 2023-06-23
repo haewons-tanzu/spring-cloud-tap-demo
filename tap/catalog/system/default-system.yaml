@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: springone-tour
+  description: Spring Cloud Architecture on TAP
+  annotations:
+    'backstage.io/techdocs-ref': dir:../
+spec:
+  owner: dev-team-01
