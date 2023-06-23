@@ -1,5 +1,7 @@
 package com.example.chaos.monkey.shopping.bestseller.fashion;
 
+import java.util.Arrays;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
