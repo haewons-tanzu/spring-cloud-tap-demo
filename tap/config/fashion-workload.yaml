@@ -30,14 +30,10 @@ spec:
   #     description: "A set of API endpoints."
   source:
     git:
-      url: https://github.com/haewons-tanzu/fashion-bestseller
+      url: https://github.com/haewons-tanzu/spring-cloud-tap-demo
       ref:
         branch: master
-    # git:
-    #   url: https://github.com/haewons-tanzu/spring-cloud-tap-demo
-    #   ref:
-    #     branch: master
-    # subPath: fashion-bestseller
+    subPath: fashion-bestseller
   
   # serviceClaims:
   # - name: rmq
