@@ -22,3 +22,16 @@ spec:
   - cook/production
   - dessert/default/tap
   - secretmenu/default/tap
+
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaim
+metadata:
+  name: sc-config-claim
+  namespace: dev-team-01
+spec:
+  ref:
+    apiVersion: config.apps.tanzu.vmware.com/v1alpha4
+    kind: ConfigurationSlice
+    name: sc-config-slice
+    namespace: dev-team-01

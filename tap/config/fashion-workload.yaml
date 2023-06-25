@@ -37,12 +37,17 @@ spec:
   env:
     - name: SPRING_CONFIG_IMPORT
       value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
+    #- name: SPRING_CLOUD_CONFIG_ENABLED
+    #  value: "true"
+    #- name: SPRING_PROFILES_ACTIVE
+    #  value: "default"
+      #value: "development"
   serviceClaims:
     - name: spring-properties
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ResourceClaim
-        name: cook-config-claim
+        name: sc-config-claim
   # serviceClaims:
   # - name: rmq
   #   ref:
