@@ -6,8 +6,7 @@ metadata:
 spec:
   backends:
     - type: git
-      #uri: https://github.com/haewons-tanzu/spring-cloud-k8s-config
-      uri: https://github.com/spring-cloud-services-samples/cook-config
+      uri: https://github.com/haewons-tanzu/spring-cloud-k8s-config
       #secretRef: 
       #  name: new-git-secret
       #  namespace: <namespace>

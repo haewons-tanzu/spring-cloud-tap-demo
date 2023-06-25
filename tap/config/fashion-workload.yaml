@@ -36,13 +36,13 @@ spec:
     subPath: fashion-bestseller
   env:
     - name: SPRING_CONFIG_IMPORT
-      value: "optional:configserver:"
-      #value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
-    #- name: SPRING_CLOUD_CONFIG_ENABLED
-    #  value: "true"
-    #- name: SPRING_PROFILES_ACTIVE
-    #  value: "default"
-      #value: "development"
+    #  value: "optional:configserver:"
+      value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
+    - name: SPRING_CLOUD_CONFIG_ENABLED
+      value: "false"
+    - name: SPRING_PROFILES_ACTIVE
+      #value: "default"
+      value: "production"
   serviceClaims:
     - name: spring-properties
       ref:
@@ -77,3 +77,4 @@ spec:
   #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
   #     kind: ResourceClaim
   #     name: auth-client
+

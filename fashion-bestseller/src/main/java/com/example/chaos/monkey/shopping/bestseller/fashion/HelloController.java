@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 	
-	@Value("${cook.special:none}")
-	String special;
+	@Value("${hello.name:none}")
+	String name;
 
 	@RequestMapping("/")
 	public String index() {
-		String str = "Greetings from Spring Boot + Tanzu!!" + special;
+		String str = "Greetings from Spring Boot + Tanzu, " + name;
 		return str;
 	}
 
