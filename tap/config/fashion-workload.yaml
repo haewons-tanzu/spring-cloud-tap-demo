@@ -36,7 +36,8 @@ spec:
     subPath: fashion-bestseller
   env:
     - name: SPRING_CONFIG_IMPORT
-      value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
+      value: "optional:configserver:"
+      #value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
     #- name: SPRING_CLOUD_CONFIG_ENABLED
     #  value: "true"
     #- name: SPRING_PROFILES_ACTIVE
