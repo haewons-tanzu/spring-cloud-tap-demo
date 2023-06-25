@@ -17,9 +17,9 @@ spec:
       apps.tanzu.vmware.com/pipeline: test
       apps.tanzu.vmware.com/language: java
   build:
-    # env:
-    # - name: BP_JVM_VERSION
-    #   value: "17"
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
   # - name: api_descriptor
   #   value:
   #     type: openapi
