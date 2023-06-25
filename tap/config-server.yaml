@@ -1,21 +1,22 @@
 apiVersion: "config.apps.tanzu.vmware.com/v1alpha4"
 kind: ConfigurationSource
 metadata:
-  name: cook-config-source
-  namespace: my-apps
+  name: sc-config-source
+  namespace: dev-team-01
 spec:
   backends:
     - type: git
+      #uri: https://github.com/haewons-tanzu/spring-cloud-k8s-config
       uri: https://github.com/spring-cloud-services-samples/cook-config
 
 ---
 apiVersion: "config.apps.tanzu.vmware.com/v1alpha4"
 kind: ConfigurationSlice
 metadata:
-  name: cook-config-slice
-  namespace: my-apps
+  name: sc-config-slice
+  namespace: dev-team-01
 spec:
-  configurationSource: cook-config-source
+  configurationSource: sc-config-source
   content:
   - cook/default
   - cook/production

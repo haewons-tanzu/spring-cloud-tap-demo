@@ -34,7 +34,15 @@ spec:
       ref:
         branch: master
     subPath: fashion-bestseller
-  
+  env:
+    - name: SPRING_CONFIG_IMPORT
+      value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
+  serviceClaims:
+    - name: spring-properties
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ResourceClaim
+        name: cook-config-claim
   # serviceClaims:
   # - name: rmq
   #   ref:

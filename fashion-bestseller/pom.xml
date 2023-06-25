@@ -91,7 +91,7 @@
         </dependency>
         -->
     </dependencies>
-    <!--
+    
     <dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -101,6 +101,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+            <!--
 			<dependency>
 				<groupId>com.wavefront</groupId>
 				<artifactId>wavefront-spring-boot-bom</artifactId>
@@ -108,9 +109,9 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+            -->
 		</dependencies>
 	</dependencyManagement>
-    -->
 
     <build>
 		<plugins>
