@@ -20,10 +20,11 @@ metadata:
 spec:
   configurationSource: sc-config-source
   content:
-  - cook/default
-  - cook/production
-  - dessert/default/tap
-  - secretmenu/default/tap
+  - fashion-bestseller/default/master
+  - toys-bestseller/default/master
+  - hot-deals/default/master
+  secretStrategy: applicationProperties
+  interval: 5s
 
 ---
 apiVersion: services.apps.tanzu.vmware.com/v1alpha1
