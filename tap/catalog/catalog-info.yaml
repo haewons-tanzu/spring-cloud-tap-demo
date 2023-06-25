@@ -10,3 +10,4 @@ spec:
     - ./service/fashion-bestseller.yaml
     - ./service/toys-bestseller.yaml
     - ./service/hot-deals.yaml
+    - ./service/gateway.yaml
