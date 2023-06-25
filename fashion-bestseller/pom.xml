@@ -73,12 +73,12 @@
             <version>${project.parent.version}</version>
         </dependency>
         -->
-        <!--
+        
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
-        
+        <!--
         <dependency>
             <groupId>com.wavefront</groupId>
             <artifactId>wavefront-spring-boot-starter</artifactId>
