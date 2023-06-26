@@ -10,6 +10,8 @@ metadata:
     tanzu.app.live.view.application.name: toys-bestseller
     #networking.knative.dev/visibility: cluster-local
     #apis.apps.tanzu.vmware.com/register-api: "true"
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
 spec:
   params:
   - name: testing_pipeline_matching_labels

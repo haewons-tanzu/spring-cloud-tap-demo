@@ -19,11 +19,11 @@ metadata:
   namespace: dev-team-01
 spec:
   configurationSource: sc-config-source
-  content:
+  content:  
+  - fashion-bestseller
   - fashion-bestseller/default/master
   - toys-bestseller/default/master
   - hot-deals/default/master
-  secretStrategy: applicationProperties
   interval: 5s
 
 ---
