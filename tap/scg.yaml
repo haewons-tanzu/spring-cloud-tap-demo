@@ -4,11 +4,13 @@ metadata:
   name: my-gateway
   namespace: dev-team-01
   labels:
+    app.kubernetes.io/part-of: fashion-bestseller
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.actuator.port: "8090"
     tanzu.app.live.view.application.flavours: spring-boot_spring-cloud-gateway
     tanzu.app.live.view.application.actuator.path: actuator
     tanzu.app.live.view.application.name: my-gateway
+    
 spec:
   observability:
     metrics:
@@ -19,7 +21,7 @@ spec:
     title: My Exciting APIs
     description: Lots of new exciting APIs for you to use!
     version: 0.1.0
-    serverUrl: http://my-gateway.dev-team-01.tap.tanzukorea.xyz
+    serverUrl: https://my-gateway.dev-team-01.tap.tanzukorea.xyz
   #env:
   #  - name: spring.cloud.gateway.httpclient.connect-timeout
   #    value: 90000

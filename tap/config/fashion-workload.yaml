@@ -8,7 +8,7 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.name: fashion-bestseller
-    networking.knative.dev/visibility: cluster-local
+    #networking.knative.dev/visibility: cluster-local
     apis.apps.tanzu.vmware.com/register-api: "true"
   annotations:
     autoscaling.knative.dev/minScale: "1"
