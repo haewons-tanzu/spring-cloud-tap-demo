@@ -36,15 +36,15 @@ spec:
   service:
     name: my-gateway
   routes:
-  - uri: lb://fashion-bestseller.dev-team-01
+  - uri: http://fashion-bestseller.dev-team-01.svc.cluster.local
     # https://fashion-bestseller.dev-team-01.tap.tanzukorea.xyz/fashion/bestseller
     predicates: 
     - Path=/fashion-bestseller/**
-  - uri: lb://toys-bestseller.dev-team-01
+  - uri: http://toys-bestseller.dev-team-01.svc.cluster.local
     # https://toys-bestseller.dev-team-01.tap.tanzukorea.xyz/toys/bestseller
     predicates: 
     - Path=/hotdeals/**
-  - uri: lb://hot-deals.dev-team-01
+  - uri: http://hot-deals.dev-team-01.svc.cluster.local
     # https://hot-deals.dev-team-01.tap.tanzukorea.xyz/hotdeals
     predicates: 
     - Path=/fashion-bestseller/**
