@@ -1,6 +1,12 @@
 spring:
   application:
     name: fashion-bestseller
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        strategy: refresh #other options: restart_context, shutdown
+
 management:
   endpoints:
     enabled-by-default: true
@@ -17,13 +23,6 @@ springdoc:
   version: 1.0.0
   api-docs.path: /v3/api-docs
   #swagger-ui.path: /swagger-ui.html
-
-spring:
-  cloud:
-    kubernetes:
-      reload:
-        enabled: true
-        strategy: refresh #other options: restart_context, shutdown
 
 
 
