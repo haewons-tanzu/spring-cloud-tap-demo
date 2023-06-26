@@ -10,10 +10,10 @@ spring:
         locator:
           lowerCaseServiceId: true
           enabled: true
-  config:
-    activate:
-      on-profile: default
-    import: configserver:http://localhost:8888
+  # config:
+  #   activate:
+  #     on-profile: default
+  #   import: configserver:http://localhost:8888
 
 ---
 server:
