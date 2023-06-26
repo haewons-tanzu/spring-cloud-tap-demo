@@ -1,15 +1,15 @@
-server:
-  port: 8070
-  shutdown: graceful
+# server:
+#   port: 8070
+#   shutdown: graceful
 spring:
   application:
     name: gateway
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          lowerCaseServiceId: true
-          enabled: true
+  # cloud:
+  #   gateway:
+  #     discovery:
+  #       locator:
+  #         lowerCaseServiceId: true
+  #         enabled: true
   # config:
   #   activate:
   #     on-profile: default
