@@ -85,6 +85,7 @@ public class StartPageController implements ApplicationListener<WebServerInitial
 
 	@Override
 	public void onApplicationEvent(WebServerInitializedEvent event) {
-		this.client = WebClient.builder().baseUrl("http://localhost:" + event.getWebServer().getPort()).build();
+		//this.client = WebClient.builder().baseUrl("http://localhost:" + event.getWebServer().getPort()).build();
+		this.client = WebClient.builder().basaeUrl("https://fashion-bestseller.dev-team-01.tap.tanzukorea.xyz").build();
 	}
 }
