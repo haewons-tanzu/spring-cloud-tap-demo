@@ -9,7 +9,7 @@ metadata:
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.name: hot-deals
     #networking.knative.dev/visibility: cluster-local
-    apis.apps.tanzu.vmware.com/register-api: "true"
+    #apis.apps.tanzu.vmware.com/register-api: "true"
   annotations:
     autoscaling.knative.dev/minScale: "1"
 spec:

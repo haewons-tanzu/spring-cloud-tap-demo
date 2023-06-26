@@ -21,7 +21,7 @@ spec:
     title: My Exciting APIs
     description: Lots of new exciting APIs for you to use!
     version: 0.1.0
-    serverUrl: https://my-gateway.dev-team-01.tap.tanzukorea.xyz
+    serverUrl: http://my-gateway.dev-team-01.tap.tanzukorea.xyz
   #env:
   #  - name: spring.cloud.gateway.httpclient.connect-timeout
   #    value: 90000
@@ -36,28 +36,18 @@ spec:
   service:
     name: my-gateway
   routes:
-  - uri: http://fashion-bestseller.dev-team-01.svc.cluster.local
-    # https://fashion-bestseller.dev-team-01.tap.tanzukorea.xyz/fashion/bestseller
+  - uri: http://fashion-bestseller.dev-team-01.svc.cluster.local/
+    predicates: 
+    - Path=/config/**
+  - uri: http://fashion-bestseller.dev-team-01.svc.cluster.local/fashion/bestseller
     predicates: 
     - Path=/fashion-bestseller/**
-  - uri: http://toys-bestseller.dev-team-01.svc.cluster.local
-    # https://toys-bestseller.dev-team-01.tap.tanzukorea.xyz/toys/bestseller
+  - uri: http://toys-bestseller.dev-team-01.svc.cluster.local/toys/bestseller
+    predicates: 
+    - Path=/toys-bestseller/**
+  - uri: http://hot-deals.dev-team-01.svc.cluster.local
     predicates: 
     - Path=/hotdeals/**
-  - uri: http://hot-deals.dev-team-01.svc.cluster.local
-    # https://hot-deals.dev-team-01.tap.tanzukorea.xyz/hotdeals
-    predicates: 
-    - Path=/fashion-bestseller/**
-  # - predicates:
-  #   - Path=/api/public/**
-  #   filters:
-  #   - StripPrefix=2
-  
-  # - uri: https://httpbin.org
-  #   predicates:
-  #   - Path=/httpbin/**
-  #   filters:
-  #   - AddRequestHeader=X-Request-Extra, Hello from Spring Cloud Gateway!
 
 ---
 apiVersion: "tanzu.vmware.com/v1"
@@ -81,21 +71,6 @@ metadata:
   labels:
     app: my-gateway-ingress
 spec:
-  # tls:
-  # - hosts:
-  #   - my-gateway.dev-team-01.tap.tanzukorea.xyz
-  #   secretName: tap-ingress-selfsigned-root-ca
-  # rules:
-  # - host: my-gateway.dev-team-01.tap.tanzukorea.xyz
-  #   http: 
-  #     paths:
-  #     - path: /
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: my-gateway
-  #           port:
-  #             number: 80
 
   defaultBackend:
     service:
