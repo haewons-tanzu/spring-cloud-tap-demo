@@ -15,7 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+ 
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
@@ -25,34 +25,34 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 
-	@Bean
-	public RouteLocator routes(RouteLocatorBuilder builder) {
-		/*
-		return builder.routes()
-				.route(p -> p.path("/hotdeals**").filters( f ->
-						f.circuitBreaker(c -> c.setName("hotdeals").setFallbackUri("forward:/fallback"))).uri("http://hot-deals:8083"))
-				.route(p -> p.path("/fashion/**").filters(f ->
-						f.circuitBreaker(c -> c.setName("fashion").setFallbackUri("forward:/fallback"))).uri("http://fashion-bestseller:8082"))
-				.route(p -> p.path("/toys/**").filters(f ->
-						f.circuitBreaker(c -> c.setName("toys").setFallbackUri("forward:/fallback"))).uri("http://toys-bestseller:8081"))
-				.build();
-				*/
-		return builder.routes()
-				.route(p -> p.path("/hotdeals**").filters( f ->
-						f.circuitBreaker(c -> c.setName("hotdeals").setFallbackUri("forward:/fallback"))).uri("lb://hot-deals"))
-				.route(p -> p.path("/fashion/**").filters(f ->
-						f.circuitBreaker(c -> c.setName("fashion").setFallbackUri("forward:/fallback"))).uri("lb://fashion-bestseller"))
-				.route(p -> p.path("/toys/**").filters(f ->
-						f.circuitBreaker(c -> c.setName("toys").setFallbackUri("forward:/fallback"))).uri("lb://toys-bestseller"))
-				.build();
-	}
+	// @Bean
+	// public RouteLocator routes(RouteLocatorBuilder builder) {
+	// 	/*
+	// 	return builder.routes()
+	// 			.route(p -> p.path("/hotdeals**").filters( f ->
+	// 					f.circuitBreaker(c -> c.setName("hotdeals").setFallbackUri("forward:/fallback"))).uri("http://hot-deals:8083"))
+	// 			.route(p -> p.path("/fashion/**").filters(f ->
+	// 					f.circuitBreaker(c -> c.setName("fashion").setFallbackUri("forward:/fallback"))).uri("http://fashion-bestseller:8082"))
+	// 			.route(p -> p.path("/toys/**").filters(f ->
+	// 					f.circuitBreaker(c -> c.setName("toys").setFallbackUri("forward:/fallback"))).uri("http://toys-bestseller:8081"))
+	// 			.build();
+	// 			*/
+	// 	return builder.routes()
+	// 			.route(p -> p.path("/hotdeals**").filters( f ->
+	// 					f.circuitBreaker(c -> c.setName("hotdeals").setFallbackUri("forward:/fallback"))).uri("lb://hot-deals"))
+	// 			.route(p -> p.path("/fashion/**").filters(f ->
+	// 					f.circuitBreaker(c -> c.setName("fashion").setFallbackUri("forward:/fallback"))).uri("lb://fashion-bestseller"))
+	// 			.route(p -> p.path("/toys/**").filters(f ->
+	// 					f.circuitBreaker(c -> c.setName("toys").setFallbackUri("forward:/fallback"))).uri("lb://toys-bestseller"))
+	// 			.build();
+	// }
 
-	@GetMapping("/fallback")
-	public ResponseEntity<List<Product>> fallback() {
-		System.out.println("fallback enabled");
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("fallback", "true");
-		return ResponseEntity.ok().headers(headers).body(Collections.emptyList());
-	}
+	// @GetMapping("/fallback")
+	// public ResponseEntity<List<Product>> fallback() {
+	// 	System.out.println("fallback enabled");
+	// 	HttpHeaders headers = new HttpHeaders();
+	// 	headers.add("fallback", "true");
+	// 	return ResponseEntity.ok().headers(headers).body(Collections.emptyList());
+	// }
 
 }

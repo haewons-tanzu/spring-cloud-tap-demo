@@ -71,11 +71,6 @@ spec:
   #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
   #     kind: ResourceClaim
   #     name: gemfire-binding-compatible
-  # - name: config-server
-  #   ref:
-  #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-  #     kind: ResourceClaim
-  #     name: configserver-binding-compatible
   # - name: auth-client
   #   ref:
   #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
