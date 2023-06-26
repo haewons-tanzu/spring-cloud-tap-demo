@@ -1,0 +1,46 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGateway
+metadata:
+  name: my-gateway
+spec:
+  count: 3
+  api:
+    title: My Exciting APIs
+    description: Lots of new exciting APIs for you to use!
+    version: 0.1.0
+    serverUrl: https://gateway.tap.tanzukorea.xyz
+  env:
+    - name: spring.cloud.gateway.httpclient.connect-timeout
+      value: "90s"
+
+---
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: sc-route-config
+spec:
+  service:
+    name: gateway
+  routes:
+  - predicates:
+    - Path=/api/public/**
+    filters:
+    - StripPrefix=2
+  
+  - uri: https://httpbin.org
+    predicates:
+    - Path=/httpbin/**
+    filters:
+    - AddRequestHeader=X-Request-Extra, Hello from Spring Cloud Gateway!
+
+---
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: sc-tap-mapping
+spec:
+  gatewayRef:
+    name: my-gateway
+    namespace: dev-team-01
+  routeConfigRef:
+    name: sc-route-config
