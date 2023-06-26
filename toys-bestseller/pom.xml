@@ -45,12 +45,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-kubernetes-discoveryclient</artifactId>
@@ -91,7 +90,7 @@
         </dependency>
         -->
     </dependencies>
-    <!--
+    
     <dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -101,6 +100,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+            <!--
 			<dependency>
 				<groupId>com.wavefront</groupId>
 				<artifactId>wavefront-spring-boot-bom</artifactId>
@@ -108,10 +108,10 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+            -->
 		</dependencies>
 	</dependencyManagement>
-    -->
-
+    
     <build>
 		<plugins>
 			<plugin>
